@@ -1,4 +1,4 @@
-Sub Stock_Ticker_WB():
+Sub StockTickerAnalysis():
 
     For Each ws In Worksheets
         Dim LastRow
