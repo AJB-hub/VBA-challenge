@@ -24,7 +24,7 @@ Sub Stock_Ticker_WB():
         ws.Range("C2:F" & LastRow).NumberFormat = "$#,##0.00;[Red]$#,##0.00"
         ws.Columns("J:J").NumberFormat = "$#,##0.00"
         ws.Columns("K:K").NumberFormat = "0.00%"
-        ws.Columns("L:L").NumberFormat = ",0,00,,\m"
+        ws.Columns("L:L").NumberFormat = "0,00,,\m"
         ws.Columns("I:P").EntireColumn.AutoFit
 
         'loop through all rows in ws
