@@ -24,7 +24,8 @@ Sub StockTickerAnalysis():
         ws.Range("C2:F" & LastRow).NumberFormat = "$#,##0.00;[Red]$#,##0.00"
         ws.Columns("J:J").NumberFormat = "$#,##0.00"
         ws.Columns("K:K").NumberFormat = "0.00%"
-        ws.Columns("L:L").NumberFormat = "0,00,,\m"
+        ws.Range("O2").NumberFormat = "0.00%"
+        ws.Range("O3").NumberFormat = "0.00%"
         ws.Columns("I:P").EntireColumn.AutoFit
 
         'loop through all rows in ws
@@ -65,6 +66,8 @@ Sub StockTickerAnalysis():
 
                 'next ticker row
                 DataTableRow = DataTableRow + 1
+                'clear the total stock ticker count
+                TotalStock = 0
             Else
                 TotalStock = TotalStock + ws.Cells(i,7).Value
             End If
@@ -76,9 +79,7 @@ Sub StockTickerAnalysis():
         GreatestTotalVolume = WorksheetFunction.Max(Columns("L:L"))
 
         ws.Range("O2").Value = MaxPercent
-        ws.Range("O2").NumberFormat = "0.00%"
         ws.Range("O3").Value = MinPercent
-        ws.Range("O3").NumberFormat = "0.00%"
         ws.Range("O4").Value = GreatestTotalVolume
 
         
